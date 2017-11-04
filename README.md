@@ -16,7 +16,11 @@ $ git clone https://github.com/DiegoChajtur/EyeOfVerbose.git
 en [Conky Manager](http://www.teejeetech.in/p/conky-manager.html) elegir tema EyeOfVerbose
 
 
-TODO
-[ ] Poder elejir de manera facil que particiones mostrar
+## TODO
+- [x] Muestra el hora y fecha (inluye los segundos)
+- [x] Muestra espacio [usado / espacio total] de las particiones ```bash sdX```
+- [x] Muestra la temperatura de la CPU [```bash acpitemp ```]
+- [ ] Manera facil de excluir particiones (por ahora hay que modificar el archivo, se excluye por defecto sda1 que generalmente es la particion ```bash EFI```)
+- [ ] Elegir el nivel de verbosidad de la info
 
 Basado en tema de Willem O: https://plus.google.com/+WillemO/posts/WfJVEoyrZhm
