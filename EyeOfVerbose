@@ -32,13 +32,16 @@ net_avg_samples 1
 override_utf8_locale yes
 use_spacer yes
 
+template3 ${font ProFont for Powerline, Bold:pixelsize=20}${color FFA300}\1 [$color${fs_used \2}${color FFA300}/$color${alignr}${offset -290}${fs_size \2}${color FFA300}${alignr}${offset -290}]$color
+
+template4 ${voffset -40}${offset 260}${color FFA300}CPU [${offset 1}$color${cpu cpu}%${color FFA300}${alignr}${offset -175}]\n${offset 260}RAM [${offset 1}$color$mem${color FFA300}/$color$memmax${color FFA300}${alignr}${offset -50}]${offset 10}\n${alignr}${offset -60}${voffset -40}Temp${alignr}${offset -50}[${alignr}${offset -45}$color${acpitemp}°c${color FFA300}${alignr}${offset -50}]${offset 1}
 
 minimum_size 0 0
 TEXT
 ${voffset 10}${color EAEAEA}${font GE Inspira:pixelsize=120}${time %H:%M}${font GE Inspira:pixelsize=30}:${time %S}${color FFA300}${voffset -60}${offset 45}${time %d}.${time  %b}.${time %y}
 ${font GE Inspira:pixelsize=58}${offset 330}${time %A}${font ProFont for Powerline, Bold:pixelsize=20}
-${offset 15}${color FFA300}sda2${offset 5}[${offset 5}$color${fs_used /}${offset 2}/${offset 5}${fs_size /}${color FFA300}]${color FFA300}${offset 15}${color FFA300}CPU${offset 5}[${offset 10}$color${cpu cpu}%${color FFA300}]
-${offset 15}sda3${offset 5}[${offset 13}$color${fs_used /mnt/myfiles}${offset 2}/${offset 17}${fs_size /mnt/myfiles}${color FFA300}]${offset 15}${color FFA300}RAM${offset 5}[${offset 10}$color$mem/$memmax${color FFA300}]
+${execpi 60 df -h --output=source,target | grep '^/dev/' | grep -v "sda1" | cut --characters=6- | sed 's/^/\$\{template3 /;s/$/\}/'}
+${template4}
 ${offset 15}
 
 
