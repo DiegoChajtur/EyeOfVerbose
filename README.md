@@ -1,5 +1,8 @@
 # Eye of verbose theme for conky
 
+### 
+![Alt text](EyeOfVerbose.png?raw=true "preview")
+
 ## Install
  - Requiere instalacion de [Powerline Fonts](https://github.com/powerline/fonts)
  - Requiere [Conky Manager](http://www.teejeetech.in/p/conky-manager.html) para facil configuración
